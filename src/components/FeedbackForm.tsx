@@ -13,7 +13,17 @@ export default function FeedbackForm() {
 				placeholder='blabla'
 				spellCheck={false}
 				value={text}
-				onChange={(e) => setText(e.target.value)}
+				onChange={(e) => {
+					const newText = e.target.value;
+					
+					if(newText.length > MAX_CHARATERS){
+						return
+					}else{
+						setText(newText)
+					}
+					
+					
+				}}
 			/>
 			<label htmlFor='feedback-textarea'>
 				Enter your feedback here, remember to #hashtag the company
