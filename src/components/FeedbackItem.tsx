@@ -32,7 +32,7 @@ export default function FeedbackItem({feedbackItem}: FeedbackItemProps) {
 				</p>
 			</div>
 
-			<p>{feedbackItem.daysAgo}</p>
+			<p>{feedbackItem.daysAgo}d</p>
 		</li>
 	)
 }
