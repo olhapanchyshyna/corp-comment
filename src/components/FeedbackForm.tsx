@@ -26,7 +26,7 @@ export default function FeedbackForm({ handleAddToList }: feedbackFormProps) {
 	}
 
 	return (
-		<form onSubmit={(e)=>handleSubmit(e)} className='form'>
+		<form onSubmit={handleSubmit} className='form'>
 			<textarea
 				id='feedback-textarea'
 				placeholder='blabla'
