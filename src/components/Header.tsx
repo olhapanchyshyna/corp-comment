@@ -3,13 +3,17 @@ import Logo from './Logo'
 import PageHeading from './PageHeading'
 import Pattern from './Pattern'
 
-export default function Header() {
+type headerProps = {
+	handleAddToList: (text: string) => void;
+}
+
+export default function Header({handleAddToList}: headerProps) {
 	return (
 		<header>
 			<Pattern/>
 			<Logo/>
 			<PageHeading/>
-			<FeedbackForm/>
+			<FeedbackForm handleAddToList={handleAddToList}/>
 		</header>
 	)
 }
