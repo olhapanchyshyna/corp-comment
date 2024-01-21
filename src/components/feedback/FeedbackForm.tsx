@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { MAX_CHARATERS } from '../../lib/constants'
+import { useFeedbackItemsContext } from '../../lib/hooks'
 
-type feedbackFormProps = {
-	handleAddToList: (text: string) => void
-}
 
-export default function FeedbackForm({ handleAddToList }: feedbackFormProps) {
+export default function FeedbackForm(){
+	const {handleAddToList} = useFeedbackItemsContext()
+
 	const [text, setText] = useState('')
 	const [showValidIndicator, setShowValidIndicator] = useState(false)
 	const [showInvalidIndicator, setShowInvalidIndicator] = useState(false)
