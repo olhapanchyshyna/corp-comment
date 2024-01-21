@@ -17,9 +17,12 @@ export default function FeedbackItem({ feedbackItem }: FeedbackItemProps) {
 			className={`feedback ${open ? 'feedback--expand' : ''}`}
 		>
 			<button
-				onClick={() => {
+				onClick={(e) => {
 					setIsTriangle(false)
+					e.currentTarget.disabled = true
 					setUpvoteCount((prev) => prev + 1)
+					e.stopPropagation()
+					
 				}}
 			>
 				{isTriangle ? <TriangleUpIcon /> : null}
