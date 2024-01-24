@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { MAX_CHARATERS } from '../../lib/constants'
-import { useFeedbackItemsContext } from '../../lib/hooks'
+import { useFeedbackItemsStore } from '../../stores/feedbackItemStore'
 
 
 export default function FeedbackForm(){
-	const {handleAddToList} = useFeedbackItemsContext()
+	const {addItemToList} = useFeedbackItemsStore()
+
 
 	const [text, setText] = useState('')
 	const [showValidIndicator, setShowValidIndicator] = useState(false)
@@ -27,7 +28,7 @@ export default function FeedbackForm(){
 
 		if(text.includes('#')){
 			setShowValidIndicator(true)
-			handleAddToList(text)
+			addItemToList(text)
 			setText('')
 			setTimeout(() => {
 				setShowValidIndicator(false)
